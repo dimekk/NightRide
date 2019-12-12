@@ -63,6 +63,7 @@ body .container .sky .car {
   height: 200px;
   width: 750px;
   animation: ride 0.7s linear infinite;
+  z-index: 2;
 }
 body .container .sky .car .car-front,
 body .container .sky .car .car-rear {
@@ -190,6 +191,7 @@ body .container .sky .tree-second {
   bottom: 99px;
   right: -700px;
   animation: move2 3s linear infinite;
+  z-index: 1;
 }
 body .container .sky .ground {
   position: absolute;

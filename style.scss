@@ -62,6 +62,7 @@ body {
         height: 200px;
         width: 750px;
         animation: ride .7s linear infinite;
+        z-index: 2;
         .car-front,
         .car-rear  { 
           position: absolute;
@@ -179,7 +180,7 @@ body {
         height: 120px;
         bottom: 77px;
         right: -80px;
-        animation: move 3s linear infinite;        
+        animation: move 3s linear infinite;
       }
       .tree-second {
         background-image: url('./palm.png');
@@ -192,6 +193,7 @@ body {
         bottom: 99px;
         right: -700px;
         animation: move2 3s linear infinite;
+        z-index: 1;
       }
       .ground {
         position: absolute;
