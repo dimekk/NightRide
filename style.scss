@@ -1,0 +1,194 @@
+$bgColor: rgb(45, 45, 45);
+$mainColor: rgb(15, 15, 15);
+
+body {
+  background: $bgColor;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    height: 700px;
+    margin: 300px auto;
+    position: absolute;
+
+    .sky {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: rgba(48, 25, 110, 1);
+      background: linear-gradient(to bottom, rgba(48, 25, 110, 1) 0%, rgba(48, 25, 110, 1) 31%, rgba(203, 96, 179, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#30196e', endColorstr='#cb60b3', GradientType=0);
+      overflow: hidden;
+      .stars, .twinkling, .clouds {
+        position:absolute;
+        top:-100px;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        display:block;
+      }
+      .clouds{
+        background:transparent url(./clouds.png) repeat top center;
+        z-index:3;
+        animation: clouds 200s linear infinite;
+      }
+      @keyframes clouds {
+        from {background-position:0 0;}
+        to {background-position:12000px 0;}
+      }
+      .stars {
+        background: transparent url(./starsky.png) repeat top center;
+        z-index:0;
+      }
+      .moon {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: rgba(250, 250, 170, 1);
+        box-shadow: 0px 0px 40px 0px rgba(250, 250, 170, 1);
+        right: -30px;
+        top: 70px;
+      }
+
+      .car {
+        position: absolute;
+        bottom: 100px;
+        height: 200px;
+        width: 750px;
+        //background-color: $mainColor;
+        .car-front,
+        .car-rear  { 
+          position: absolute;
+          width: 15%;
+          height: 20%;
+          background-color: $mainColor;
+          left: 16.5%;
+          bottom: 7%;
+          border-radius: 15% 0%  0%  15%;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 75% 100%, 63% 43%, 36% 43%, 28% 100%, 11% 93%);
+        }
+        .car-front {
+          clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 67% 100%, 55% 42%, 36% 43%, 13% 96%, 6% 100%);          
+          border-radius: 0;
+          border-top-left-radius: 15%;
+          border-bottom-left-radius: 15%;
+          left: 30.5%;
+          transform: scaleX(-1);
+        }
+        .car-upper {
+          position: absolute;
+          left: 26.5%;
+          bottom: 21.5%;
+          width: 20%;
+          height: 20%;
+          clip-path: polygon(65% -2%, 94% 84%, 64% 15%, 3% 48%);
+          background-color: $mainColor;
+        }
+        .car-top-rear {
+          position: absolute;
+          left: 17.5%;
+          bottom: 27%;
+          width: 16%;
+          height: 18%;
+          background-color: #0f0f0f;
+          clip-path: polygon(100% 44%, 0% 100%, 100% 100%);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .wheel,
+      .wheel:after,
+      .wheel:before {
+        position: absolute;
+        bottom: 0px;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background: #1e2327;
+      }
+      .wheel {
+        left: 21.5%;
+        -webkit-animation: spin 1s infinite linear;
+        animation: spin 1s infinite linear;
+      }
+      .wheel.front {
+        left: 36.5%;
+      }
+      .wheel:after,
+      .wheel:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+        height: 60%;
+      }
+      .wheel:before {
+        background: rgba(203, 96, 179, 1);
+      }
+      .wheel:after {
+        top: 40%;
+        left: 40%;
+        width: 20%;
+        height: 20%;
+      }
+      @keyframes move {
+        100% {
+          transform: translateX(-900px);
+        }
+      }
+      @keyframes move2 {
+        100% {
+          transform: translateX(-1800px);
+        }
+      }
+      .tree {
+        background-image: url('./palm.png');
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: 34%;
+        position: absolute;
+        width: 30%;
+        height: 120px;
+        bottom: 77px;
+        right: -80px;
+        animation: move 3s linear infinite;        
+      }
+      .tree-second {
+        background-image: url('./palm.png');
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: 34%;
+        position: absolute;
+        width: 55%;
+        height: 180px;
+        bottom: 99px;
+        right: -700px;
+        animation: move2 3s linear infinite;
+      }
+      .ground {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 100px;
+        background: $mainColor;
+      }
+    }
+  }
+}
