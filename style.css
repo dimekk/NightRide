@@ -62,13 +62,14 @@ body .container .sky .car {
   bottom: 100px;
   height: 200px;
   width: 750px;
+  animation: ride 0.7s linear infinite;
 }
 body .container .sky .car .car-front,
 body .container .sky .car .car-rear {
   position: absolute;
   width: 15%;
   height: 20%;
-  background-color: #0f0f0f;
+  background-color: #211829;
   left: 16.5%;
   bottom: 7%;
   border-radius: 15% 0% 0% 15%;
@@ -89,7 +90,7 @@ body .container .sky .car .car-upper {
   width: 20%;
   height: 20%;
   clip-path: polygon(65% -2%, 94% 84%, 64% 15%, 3% 48%);
-  background-color: #0f0f0f;
+  background-color: #211829;
 }
 body .container .sky .car .car-top-rear {
   position: absolute;
@@ -97,8 +98,19 @@ body .container .sky .car .car-top-rear {
   bottom: 27%;
   width: 16%;
   height: 18%;
-  background-color: #0f0f0f;
+  background-color: #211829;
   clip-path: polygon(100% 44%, 0% 100%, 100% 100%);
+}
+@keyframes ride {
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  0% {
+    transform: translateY(-1px);
+  }
 }
 @keyframes spin {
   0% {
@@ -184,7 +196,7 @@ body .container .sky .ground {
   bottom: 0px;
   width: 100%;
   height: 100px;
-  background: #0f0f0f;
+  background: #211829;
 }
 
 /*# sourceMappingURL=style.css.map */

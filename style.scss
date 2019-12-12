@@ -1,5 +1,5 @@
 $bgColor: rgb(45, 45, 45);
-$mainColor: rgb(15, 15, 15);
+$mainColor: #211829;
 
 body {
   background: $bgColor;
@@ -61,7 +61,7 @@ body {
         bottom: 100px;
         height: 200px;
         width: 750px;
-        //background-color: $mainColor;
+        animation: ride .7s linear infinite;
         .car-front,
         .car-rear  { 
           position: absolute;
@@ -96,9 +96,20 @@ body {
           bottom: 27%;
           width: 16%;
           height: 18%;
-          background-color: #0f0f0f;
+          background-color: $mainColor;
           clip-path: polygon(100% 44%, 0% 100%, 100% 100%);
         }
+      }
+      @keyframes ride {
+         100% {
+           transform: translateY(-1px);
+         }
+         50% {
+           transform: translateY(2px);
+         }
+         0% { 
+           transform: translateY(-1px);
+         }
       }
 
       @keyframes spin {
