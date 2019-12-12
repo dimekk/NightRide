@@ -5,6 +5,7 @@ body {
   background: $bgColor;
   display: flex;
   justify-content: center;
+  transform: scale(.5);
 
   .container {
     display: flex;
